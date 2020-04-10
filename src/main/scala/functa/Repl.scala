@@ -7,7 +7,7 @@ import scala.util.{Failure, Success}
 object Repl {
   def main(args: Array[String]): Unit = {
     def repl: Unit = {
-      val line = readLine("functa> ")
+      val line = scala.io.StdIn.readLine("functa> ")
 
       new Parser(line).program.run() match {
         case Success(i) => println(i)

@@ -1,5 +1,6 @@
 package functa
 
+import scala.language.postfixOps
 import org.parboiled2._
 
 class Parser(val input: ParserInput, parsedFileName: Option[String] = None) extends org.parboiled2.Parser {
@@ -194,7 +195,7 @@ class Parser(val input: ParserInput, parsedFileName: Option[String] = None) exte
 
   def exponent        = rule('e' ~ anyOf("+-") ~ digit +)
   def escapeCharacter = rule(anyOf("\"\\nrtf"))
-  
+
   def digit    = rule(Digit)
   def digit19  = rule(Digit19)
   def letter   = rule(Alpha)
